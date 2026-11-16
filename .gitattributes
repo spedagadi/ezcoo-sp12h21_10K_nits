@@ -1,0 +1,17 @@
+# Firmware and vendor binaries: never apply text/EOL conversion.
+*.hex -text
+*.bin -text
+*.exe binary
+*.dll binary
+*.zip binary
+*.rar binary
+*.7z binary
+*.mp4 binary
+*.pdf binary
+*.docx binary
+
+# Scripts and docs: LF in the repo.
+*.py text eol=lf
+*.md text eol=lf
+*.sh text eol=lf
+*.txt text eol=lf
