@@ -30,14 +30,19 @@ after:  45 0b f8 86 60 76 8f
   format does not use. For "the player should not tone-map", this is the top of
   the scale.
 - The **v1 EDID slot** (a different lever mode, 350 nits) is untouched.
-- Primaries remain **P3-D65**. A BT.2020 variant is possible but not included
-  (payload `45 0b f8 57 98 a9 53` for DM 3.x, or `49 0b f8 57 98 a9 53` for DM 4.x).
+- The default image keeps **P3-D65** primaries. The BT.2020 variant
+  (`EZ-SP12H21_Ver1.09_ML9434_BT2020.hex`) uses payload
+  `45 0b f8 57 98 a9 53` — same v2 / DM 3.x / LLDV / min PQ 20 / max PQ 4070,
+  primaries **BT.2020** (R 0.707/0.289, G 0.168/0.797, B 0.129/0.043).
+  Use P3-D65 to emulate a P3 display; use BT.2020 when the downstream pipeline
+  expects the full BT.2020 gamut.
 
 ## Folder
 
 ```
 firmware/
-  EZ-SP12H21_Ver1.09_ML9434.hex        <- flash this (10K / 9434 nits)
+  EZ-SP12H21_Ver1.09_ML9434.hex        <- flash this (10K / 9434 nits, P3-D65)
+  EZ-SP12H21_Ver1.09_ML9434_BT2020.hex <- same, BT.2020 primaries
   EZ-SP12H21_Ver1.09(DB13).hex         <- stock restore
 tools/
   gd32/GD32 All In One Programmer/     <- official GD32 programmer v5.4.0.42035
@@ -69,6 +74,9 @@ SHA256SUMS.txt
    `firmware/EZ-SP12H21_Ver1.09_ML9434.hex`.
    If the file dialog filters `.bin`, change it to `.hex` / All files.
 6. Tick **Verify after download**. Click **Download** and wait for **100% Finish**.
+   If Verify fails at ~29% with the auto-detected `GD32E103CBT6`, select
+   `GD32C103CBT6` first. If C103 is not listed, untick Verify — the write itself
+   has been valid (the previous 10K image booted without it).
 7. Disconnect, power-cycle the splitter (without holding UPDATE) to boot the app.
 
 ## Do not

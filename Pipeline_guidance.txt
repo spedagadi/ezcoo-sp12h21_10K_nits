@@ -1,0 +1,66 @@
+{
+  "pipeline_order": [
+    "debanding",
+    "zion_grade",
+    "micro_contrast",
+    "adaptive_sharpen",
+    "nls_warp",
+    "lut_3d",
+    "dithering_10bit"
+  ],
+  "presets": {
+    "media_player": {
+      "dv_p7_fel_remux": {
+        "description": "12-bit Dolby Vision Profile 7 FEL UHD Blu-ray remux",
+        "micro_contrast": { "enabled": true, "strength": "default" },
+        "dithering_10bit": { "enabled": true, "depth": 10 },
+        "adaptive_sharpen": { "enabled": false, "strength": "off" },
+        "debanding": { "enabled": false, "strength": "off" }
+      },
+      "hdr10_dv_p5_p8_remux": {
+        "description": "High-bitrate 10-bit HDR10, DV Profile 5, or Profile 8 disc remux",
+        "micro_contrast": { "enabled": true, "strength": "default" },
+        "dithering_10bit": { "enabled": true, "depth": 10 },
+        "adaptive_sharpen": { "enabled": false, "strength": "subtle" },
+        "debanding": { "enabled": false, "strength": "off" }
+      },
+      "compressed_streaming_rip": {
+        "description": "8-bit or 10-bit compressed WEB-DL / streaming rip",
+        "micro_contrast": { "enabled": true, "strength": "default" },
+        "dithering_10bit": { "enabled": true, "depth": 10 },
+        "adaptive_sharpen": { "enabled": true, "strength": "low" },
+        "debanding": { "enabled": true, "strength": "medium" }
+      },
+      "sdr_1080p_upscaled": {
+        "description": "8-bit 1080p SDR Blu-ray or upscaled HD content",
+        "micro_contrast": { "enabled": true, "strength": "default" },
+        "dithering_10bit": { "enabled": true, "depth": 10 },
+        "adaptive_sharpen": { "enabled": true, "strength": "medium" },
+        "debanding": { "enabled": true, "strength": "medium" }
+      }
+    },
+    "video_processor": {
+      "streaming_box_lldv": {
+        "description": "Live HDMI from Apple TV, Fire TV, Shield, or LLDV EDID output",
+        "micro_contrast": { "enabled": true, "strength": "default" },
+        "dithering_10bit": { "enabled": true, "depth": 10 },
+        "adaptive_sharpen": { "enabled": true, "strength": "low" },
+        "debanding": { "enabled": true, "strength": "medium" }
+      },
+      "live_tv_broadcast": {
+        "description": "Live 1080i/1080p broadcast television or sports feed",
+        "micro_contrast": { "enabled": true, "strength": "medium" },
+        "dithering_10bit": { "enabled": true, "depth": 10 },
+        "adaptive_sharpen": { "enabled": true, "strength": "medium" },
+        "debanding": { "enabled": true, "strength": "high" }
+      },
+      "gaming_console_pc": {
+        "description": "Live HDMI from PS5, Xbox Series X, or PC desktop/gaming",
+        "micro_contrast": { "enabled": true, "strength": "low" },
+        "dithering_10bit": { "enabled": true, "depth": 10 },
+        "adaptive_sharpen": { "enabled": false, "strength": "off" },
+        "debanding": { "enabled": false, "strength": "off" }
+      }
+    }
+  }
+}

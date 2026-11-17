@@ -2,3 +2,4 @@
 01226ea8b3f054cf7d9c39e184f8bc1874a451010b1b2ee651b347df7ae2b559  firmware/EZ-SP12H21_Ver1.09(DB13).hex
 8154ed1f037fc790fd57b5b7f42431f561d261ab1a9adcae69efe21fee389ae3  tools/gd32/GD32 All In One Programmer/GD32AllInOneProgrammer.exe
 5452ab7ccb512b5c051efb1f427dec9c795f48cfafb7d36e13ece4233499c086  tools/drivers/win64/GD32DfuDrivers.exe
+cc70df6d3800c8f2bb1c49c42ebd8c078543488cf00590a86c94221e4ae53000  firmware/EZ-SP12H21_Ver1.09_ML9434_BT2020.hex
